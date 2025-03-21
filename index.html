@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Kumar - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1.2s ease-in-out;
+        }
+        h2 {
+            border-bottom: 2px solid #ff758c;
+            padding-bottom: 5px;
+        }
+        .work-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .work-gallery img {
+            width: 250px;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .work-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 15px rgba(255, 117, 140, 0.5);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1e1e1e;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ayush Kumar</h1>
+        <p>Video Editor | Graphic Designer | Cinematographer</p>
+    </header>
+    
+    <section id="about" class="reveal">
+        <h2>About Me</h2>
+        <p>I am a passionate video editor, graphic designer, and cinematographer with expertise in Adobe Premiere Pro and Illustrator. I love crafting immersive and visually appealing stories.</p>
+    </section>
+
+    <section id="work-experience" class="reveal">
+        <h2>Work Experience</h2>
+        <h3>Freelance Multimedia Designer & Video Editor</h3>
+        <p>March 2023 – Present</p>
+        <ul>
+            <li>Produced cinematic travel videos and promotional content.</li>
+            <li>Developed motion graphics and seamless transitions.</li>
+            <li>Collaborated with clients to create compelling narratives.</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="reveal">
+        <h2>My Work</h2>
+        <div class="work-gallery">
+            <img src="work1.jpg" alt="Project 1">
+            <img src="work2.jpg" alt="Project 2">
+            <img src="work3.jpg" alt="Project 3">
+        </div>
+        <h3>Featured Projects</h3>
+        <ul>
+            <li><strong>Travel Documentary:</strong> A cinematic short film capturing the beauty of various locations.</li>
+            <li><strong>Brand Commercial:</strong> Created an engaging promotional video for a startup.</li>
+            <li><strong>Music Video:</strong> Edited a high-energy music video with smooth transitions.</li>
+        </ul>
+        <p style="text-align: center; margin-top: 20px;"><a href="#">View More</a></p>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:ayushapk13@gmail.com">ayushapk13@gmail.com</a></p>
+        <p>Phone: 7488433691</p>
+        <p>LinkedIn: <a href="#">Your Profile</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Ayush Kumar | Designed with ❤️</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let elements = document.querySelectorAll(".reveal");
+            function revealElements() {
+                let scrollY = window.scrollY;
+                elements.forEach(element => {
+                    if (element.getBoundingClientRect().top < window.innerHeight * 0.85) {
+                        element.classList.add("active");
+                    }
+                });
+            }
+            window.addEventListener("scroll", revealElements);
+            revealElements();
+        });
+    </script>
+</body>
+</html>
